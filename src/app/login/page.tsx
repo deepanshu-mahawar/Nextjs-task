@@ -3,7 +3,6 @@ import { signIn, useSession } from "next-auth/react";
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from 'yup';
-import styled from "styled-components";
 import { useRouter } from "next/navigation";
 
 
@@ -14,6 +13,7 @@ import {
     Box,
     Link,
 } from '@mui/material';
+
 
 
 interface RegistrationFormValues{
@@ -53,38 +53,53 @@ export default function Login (){
     });
 
     return(
-    <Box sx={{backgroundColor: "white", width: "400px", borderRadius: "20px", padding: "35px 50px", border: "2px solid", boxShadow: "0px 0px 20px 5px rgba(117, 117, 117, 0.692)"}}>
-        <Typography variant="h4" sx={{textAlign: "center", color: "black"}}>Login</Typography>
+    <Box
+    sx={{width: "400px", padding: "35px 50px", boxShadow: "0px 0px 20px 5px rgba(117, 117, 117, 0.692)"}}
+    className="bg-white rounded-2xl">
+        <Typography variant="h4" className="text-center text-black">Login</Typography>
             <form onSubmit={formik.handleSubmit}>
-            <TextField sx={{width: "100%", marginTop: "20px"}} id="email" label="Email" variant="outlined" 
+            <TextField className="w-full mt-3" id="email" label="Email" variant="outlined" 
             {...formik.getFieldProps('email')} 
             error={formik.touched.email && Boolean(formik.errors.email)}
             helperText={formik.touched.email && formik.errors.email}/>
 
-            <TextField sx={{width: "100%", marginTop: "10px"}} id="password" label="Password" variant="outlined" 
+            <TextField className="w-full mt-3" id="password" label="Password" variant="outlined" 
             {...formik.getFieldProps('password')} 
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}/>
                     
-            <Typography sx={{textAlign: "center", color: "black", marginTop: "20px", marginBottom: "20px"}}>Can't have an account?<Link sx={{textDecoration: "none", cursor: "pointer"}} href="/signup"> Sign In</Link></Typography>
+            <Typography 
+            className="text-center text-black mt-3 mb-3">Can't have an account?
+            <Link className="no-underline cursor-pointer" href="/signup"> Sign In</Link>
+            </Typography>
 
-            <Button sx={{width: "100%", height: "50px"}} variant="contained" color="primary" type="submit">Login</Button>
+            <Button className="w-full" style={{height: "50px"}} variant="contained" color="primary" type="submit">Login</Button>
 
-            <div className="line"><hr  className="hr1"/><p style={{color: "black"}}>Or</p><hr className="hr2"/></div>
+            <div 
+            className="flex justify-center items-center mt-3">
+                <hr  
+                className="size-2 w-full mr-5"/>
+                <p style={{color: "black"}}>Or</p>
+                <hr 
+                className="size-2 w-full ml-5"/></div>
             </form>
 
-            <div className="mainbtndiv">
+            <div 
+            className="mt-2 w-full border-2 border-solid border-[#484848] rounded flex justify-center items-center" style={{height: "50px"}}>
                 <div className="imgdiv">
                     <img src="" alt="" />
                 </div>
-                <button className="btn" onClick={ async ()=>await signIn("google", {callbackUrl: `${window.location.origin}`})}>Sign up with google</button>
+                <button 
+                className="text-black" onClick={ async ()=>await signIn("google", {callbackUrl: `${window.location.origin}`})}>Sign up with google</button>
             </div>
 
-            <div className="mainbtndiv1">
+            <div 
+            className="mt-3 w-full border-2 border-solid border-[#484848] rounded flex justify-center items-center" style={{height : '50px' }}>
                 <div className="imgdiv1">
                     <img src="" alt="" />
                 </div>
-                <button className="btn1" onClick={ async ()=> await signIn("Facebook", {callbackUrl: `${window.location.origin}`})}>Sign up with Facebook</button>
+                <button 
+                className="text-black" onClick={ async ()=> await signIn("Facebook", {callbackUrl: `${window.location.origin}`})}>Sign up with Facebook</button>
              </div>
             </Box>
         

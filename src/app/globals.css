@@ -40,58 +40,11 @@ body{
     align-items: center;
 }
 
-.line{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-  margin-bottom: 14px;
-}
-
-.hr1{
-  size: 2px;
-  color: black;
-  width: 100%;
-  margin-right: 10px;
-}
-
-.hr2{
-  size: 2px;
-  color: black;
-  width: 100%;
-  margin-left: 10px;
-}
-
-.mainbtndiv{
-  width: 100%;
-  height: 50px;
-  border: 2px solid #484848;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .imgdiv{
   background: url(../app/assets/google.png);
   background-size: 25px;
   height: 25px;
   width: 9%;
-}
-
-.btn{
-  color: black;
-}
-
-.mainbtndiv1{
-  margin-top: 15px;
-  width: 100%;
-  height: 50px;
-  border: 2px solid #484848;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .imgdiv1{
@@ -102,8 +55,5 @@ body{
   width: 10%;
 }
 
-.btn1{
-  color: black;
-}
 
 
