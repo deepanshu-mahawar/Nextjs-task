@@ -128,6 +128,13 @@ export default function Signup (){
                 </div>
                 <button className="btn" onClick={()=>signIn("google")}>Sign up with google</button>
              </div>
+
+             <div className="mainbtndiv1">
+                <div className="imgdiv1">
+                    <img src="" alt="" />
+                </div>
+                <button className="btn1" onClick={()=>signIn("Facebook")}>Sign up with Facebook</button>
+             </div>
             </Box>
         
 

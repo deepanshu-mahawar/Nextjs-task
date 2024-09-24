@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
 
+
 import {
     TextField,
     Button,
@@ -13,6 +14,7 @@ import {
     Box,
     Link,
 } from '@mui/material';
+
 
 interface RegistrationFormValues{
     email: string;
@@ -71,11 +73,18 @@ export default function Login (){
             <div className="line"><hr  className="hr1"/><p style={{color: "black"}}>Or</p><hr className="hr2"/></div>
             </form>
 
-             <div className="mainbtndiv">
+            <div className="mainbtndiv">
                 <div className="imgdiv">
                     <img src="" alt="" />
                 </div>
                 <button className="btn" onClick={()=>signIn("google")}>Sign up with google</button>
+            </div>
+
+            <div className="mainbtndiv1">
+                <div className="imgdiv1">
+                    <img src="" alt="" />
+                </div>
+                <button className="btn1" onClick={()=>signIn("Facebook")}>Sign up with Facebook</button>
              </div>
             </Box>
         
