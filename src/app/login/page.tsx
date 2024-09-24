@@ -77,14 +77,14 @@ export default function Login (){
                 <div className="imgdiv">
                     <img src="" alt="" />
                 </div>
-                <button className="btn" onClick={()=>signIn("google")}>Sign up with google</button>
+                <button className="btn" onClick={ async ()=>await signIn("google", {callbackUrl: `${window.location.origin}`})}>Sign up with google</button>
             </div>
 
             <div className="mainbtndiv1">
                 <div className="imgdiv1">
                     <img src="" alt="" />
                 </div>
-                <button className="btn1" onClick={()=>signIn("Facebook")}>Sign up with Facebook</button>
+                <button className="btn1" onClick={ async ()=> await signIn("Facebook", {callbackUrl: `${window.location.origin}`})}>Sign up with Facebook</button>
              </div>
             </Box>
         
